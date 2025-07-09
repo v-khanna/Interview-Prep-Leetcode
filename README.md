@@ -71,7 +71,7 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(log n)
     - Space Complexity: O(1)
 
-### Medium Problems (5 problems)
+### Medium Problems (19 problems)
 
 1. **Add Two Numbers** (`addTwoNumbers.py`)
    - Add two numbers represented by linked lists
@@ -93,7 +93,82 @@ Interview-Prep-Leetcode/
    - Time Complexity: O(n²)
    - Space Complexity: O(1)
 
-### Hard Problems (3 problems)
+5. **Binary Tree Level Order Traversal** (`binaryTreeLevelOrderTraversal.py`)
+   - Traverse binary tree level by level
+   - Time Complexity: O(n)
+   - Space Complexity: O(n)
+
+6. **Course Schedule** (`courseSchedule.py`)
+   - Check if courses can be completed (cycle detection)
+   - Time Complexity: O(V + E)
+   - Space Complexity: O(V + E)
+
+7. **Subsets** (`subsets.py`)
+   - Generate all possible subsets (power set)
+   - Time Complexity: O(n * 2^n)
+   - Space Complexity: O(n * 2^n)
+
+8. **Top K Frequent Elements** (`topKFrequentElements.py`)
+   - Find k most frequent elements
+   - Time Complexity: O(n log k)
+   - Space Complexity: O(n)
+
+9. **Group Anagrams** (`groupAnagrams.py`)
+   - Group strings by anagram
+   - Time Complexity: O(n * k log k)
+   - Space Complexity: O(n * k)
+
+10. **Kth Smallest Element in BST** (`kthSmallestElementInBST.py`)
+    - Find kth smallest element in binary search tree
+    - Time Complexity: O(k)
+    - Space Complexity: O(h)
+
+11. **Number of Islands** (`numberOfIslands.py`)
+    - Count connected components in 2D grid
+    - Time Complexity: O(m * n)
+    - Space Complexity: O(m * n)
+
+12. **Spiral Matrix** (`spiralMatrix.py`)
+    - Traverse matrix in spiral order
+    - Time Complexity: O(m * n)
+    - Space Complexity: O(1)
+
+13. **Rotate Image** (`rotateImage.py`)
+    - Rotate matrix 90 degrees clockwise
+    - Time Complexity: O(n²)
+    - Space Complexity: O(1)
+
+14. **Search in Rotated Sorted Array** (`searchInRotatedSortedArray.py`)
+    - Binary search in rotated sorted array
+    - Time Complexity: O(log n)
+    - Space Complexity: O(1)
+
+15. **Letter Combinations of Phone Number** (`letterCombinationsOfPhoneNumber.py`)
+    - Generate all letter combinations for phone number
+    - Time Complexity: O(4^n * n)
+    - Space Complexity: O(4^n * n)
+
+16. **Combination Sum** (`combinationSum.py`)
+    - Find all combinations that sum to target
+    - Time Complexity: O(n^(target/min))
+    - Space Complexity: O(target/min)
+
+17. **Permutations** (`permutations.py`)
+    - Generate all permutations of array
+    - Time Complexity: O(n!)
+    - Space Complexity: O(n!)
+
+18. **Minimum Path Sum** (`minimumPathSum.py`)
+    - Find minimum path sum in grid
+    - Time Complexity: O(m * n)
+    - Space Complexity: O(m * n)
+
+19. **Unique Paths** (`uniquePaths.py`)
+    - Count unique paths in grid
+    - Time Complexity: O(m * n)
+    - Space Complexity: O(m * n)
+
+### Hard Problems (8 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -109,6 +184,31 @@ Interview-Prep-Leetcode/
    - Merge k sorted linked lists
    - Time Complexity: O(n log k)
    - Space Complexity: O(k)
+
+4. **LFU Cache** (`lfuCache.py`)
+   - Design Least Frequently Used cache with O(1) operations
+   - Time Complexity: O(1) for get/put
+   - Space Complexity: O(capacity)
+
+5. **Word Ladder II** (`wordLadderII.py`)
+   - Find all shortest transformation sequences
+   - Time Complexity: O(n * 26^l * l)
+   - Space Complexity: O(n * l)
+
+6. **N-Queens II** (`nQueensII.py`)
+   - Count all valid n-queens solutions
+   - Time Complexity: O(n!)
+   - Space Complexity: O(n)
+
+7. **Trapping Rain Water II** (`trappingRainWaterII.py`)
+   - 2D water trapping with min-heap
+   - Time Complexity: O(mn * log(mn))
+   - Space Complexity: O(mn)
+
+8. **Edit Distance** (`editDistance.py`)
+   - Classic DP with path reconstruction
+   - Time Complexity: O(mn)
+   - Space Complexity: O(mn)
 
 ## How to Use
 
@@ -133,10 +233,15 @@ Interview-Prep-Leetcode/
 
 - **Two Pointers**: Used in problems like "Container With Most Water", "3Sum"
 - **Sliding Window**: Used in "Longest Substring Without Repeating Characters"
-- **Dynamic Programming**: Used in "Regular Expression Matching"
-- **Binary Search**: Used in "Median of Two Sorted Arrays"
-- **Heap/Priority Queue**: Used in "Merge k Sorted Lists"
+- **Dynamic Programming**: Used in "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance"
+- **Binary Search**: Used in "Median of Two Sorted Arrays", "Search in Rotated Sorted Array", "Kth Smallest Element in BST"
+- **Heap/Priority Queue**: Used in "Merge k Sorted Lists", "Top K Frequent Elements", "Trapping Rain Water II"
 - **Stack**: Used in "Valid Parentheses"
+- **Backtracking**: Used in "Subsets", "Permutations", "Combination Sum", "Letter Combinations", "N-Queens II"
+- **Graph/Tree Traversal**: Used in "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule"
+- **Hash Map**: Used in "Group Anagrams", "Two Sum"
+- **Matrix Manipulation**: Used in "Spiral Matrix", "Rotate Image"
+- **Design**: Used in "LFU Cache"
 
 ## Tips for Interview Preparation
 
