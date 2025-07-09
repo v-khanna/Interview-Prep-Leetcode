@@ -14,7 +14,7 @@ Interview-Prep-Leetcode/
 
 ## Problems by Difficulty
 
-### Easy Problems (9 problems)
+### Easy Problems (14 problems)
 
 1. **Two Sum** (`two-sum.py`)
    - Find two numbers in an array that add up to a target
@@ -71,7 +71,22 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(log n)
     - Space Complexity: O(1)
 
-### Medium Problems (19 problems)
+12. **Friend Circles** (`friendCircles.py`)
+    - Count connected components using Union Find
+    - Time Complexity: O(n²)
+    - Space Complexity: O(n)
+
+13. **Next Greater Element I** (`nextGreaterElementI.py`)
+    - Find next greater element using monotonic stack
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+14. **Number of 1 Bits** (`numberOf1Bits.py`)
+    - Count set bits using bit manipulation
+    - Time Complexity: O(log n)
+    - Space Complexity: O(1)
+
+### Medium Problems (25 problems)
 
 1. **Add Two Numbers** (`addTwoNumbers.py`)
    - Add two numbers represented by linked lists
@@ -168,7 +183,37 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(m * n)
     - Space Complexity: O(m * n)
 
-### Hard Problems (23 problems)
+20. **Redundant Connection** (`redundantConnection.py`)
+    - Detect cycle in undirected graph using Union Find
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+21. **Next Greater Element II** (`nextGreaterElementII.py`)
+    - Find next greater element in circular array
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+22. **Daily Temperatures** (`dailyTemperatures.py`)
+    - Find days to wait for warmer temperature
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+23. **Range Sum Query - Immutable** (`rangeSumQueryImmutable.py`)
+    - Range sum queries using prefix sum
+    - Time Complexity: O(1) per query
+    - Space Complexity: O(n)
+
+24. **Power of Two** (`powerOfTwo.py`)
+    - Check if number is power of 2 using bit manipulation
+    - Time Complexity: O(1)
+    - Space Complexity: O(1)
+
+25. **Longest Substring Without Repeating Characters** (`longestSubstringWithoutRepeatingCharacters.py`)
+    - Find longest substring without repeating characters
+    - Time Complexity: O(n)
+    - Space Complexity: O(min(m, n))
+
+### Hard Problems (32 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -285,6 +330,51 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(mn)
     - Space Complexity: O(mn)
 
+24. **Number of Islands II** (`numberOfIslandsII.py`)
+    - Dynamic island counting using Union Find
+    - Time Complexity: O(k * log(mn))
+    - Space Complexity: O(mn)
+
+25. **Range Sum Query - Mutable** (`rangeSumQueryMutable.py`)
+    - Range sum with updates using Segment Tree
+    - Time Complexity: O(log n) per query/update
+    - Space Complexity: O(n)
+
+26. **Range Sum Query 2D** (`rangeSumQuery2D.py`)
+    - 2D range sum queries using prefix sum
+    - Time Complexity: O(1) per query
+    - Space Complexity: O(mn)
+
+27. **Word Search II** (`wordSearchII.py`)
+    - Multiple word search using Trie
+    - Time Complexity: O(mn * 4^L)
+    - Space Complexity: O(L)
+
+28. **Sliding Window Maximum** (`slidingWindowMaximum.py`)
+    - Maximum in sliding window using monotonic deque
+    - Time Complexity: O(n)
+    - Space Complexity: O(k)
+
+29. **Single Number III** (`singleNumberIII.py`)
+    - Find two single numbers using bit manipulation
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+
+30. **Design Add and Search Words Data Structure** (`designAddAndSearchWordsDataStructure.py`)
+    - Trie with wildcard support
+    - Time Complexity: O(m) for add, O(26^m) for search
+    - Space Complexity: O(ALPHABET_SIZE * m * n)
+
+31. **Implement Trie (Prefix Tree)** (`implementTriePrefixTree.py`)
+    - Basic trie implementation
+    - Time Complexity: O(m) for insert/search
+    - Space Complexity: O(ALPHABET_SIZE * m * n)
+
+32. **Minimum Window Substring** (`minimumWindowSubstring.py`)
+    - Minimum window containing all characters
+    - Time Complexity: O(n)
+    - Space Complexity: O(k)
+
 ## How to Use
 
 1. **Run Individual Problems:**
@@ -307,11 +397,16 @@ Interview-Prep-Leetcode/
 ## Common Algorithm Patterns
 
 - **Two Pointers**: Used in problems like "Container With Most Water", "3Sum"
-- **Sliding Window**: Used in "Longest Substring Without Repeating Characters"
+- **Sliding Window**: Used in "Longest Substring Without Repeating Characters", "Minimum Window Substring", "Sliding Window Maximum"
 - **Dynamic Programming**: Used in "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance", "Word Break", "Longest Increasing Subsequence", "Coin Change", "Partition Equal Subset Sum"
 - **Binary Search**: Used in "Median of Two Sorted Arrays", "Search in Rotated Sorted Array", "Kth Smallest Element in BST", "Longest Increasing Subsequence"
 - **Heap/Priority Queue**: Used in "Merge k Sorted Lists", "Top K Frequent Elements", "Trapping Rain Water II"
 - **Stack**: Used in "Valid Parentheses"
+- **Monotonic Stack/Queue**: Used in "Next Greater Element I/II", "Daily Temperatures", "Sliding Window Maximum"
+- **Union Find/Disjoint Set**: Used in "Friend Circles", "Redundant Connection", "Number of Islands II"
+- **Segment Tree**: Used in "Range Sum Query - Mutable", "Range Sum Query 2D"
+- **Trie**: Used in "Implement Trie", "Word Search II", "Design Add and Search Words"
+- **Bit Manipulation**: Used in "Single Number III", "Power of Two", "Number of 1 Bits"
 - **Backtracking**: Used in "Subsets", "Permutations", "Combination Sum", "Letter Combinations", "N-Queens II", "Word Search", "Remove Invalid Parentheses"
 - **Graph/Tree Traversal**: Used in "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule", "Binary Tree Maximum Path Sum", "Serialize and Deserialize Binary Tree"
 - **Hash Map/Set**: Used in "Group Anagrams", "Two Sum", "Longest Consecutive Sequence", "Valid Sudoku"
@@ -319,6 +414,7 @@ Interview-Prep-Leetcode/
 - **Design**: Used in "LFU Cache", "Implement Trie"
 - **String Manipulation**: Used in "Longest Palindromic Substring", "Remove Invalid Parentheses"
 - **Interval Problems**: Used in "Merge Intervals"
+- **Prefix Sum**: Used in "Range Sum Query - Immutable", "Range Sum Query 2D"
 
 ## Tips for Interview Preparation
 
