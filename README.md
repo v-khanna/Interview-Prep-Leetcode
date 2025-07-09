@@ -168,7 +168,7 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(m * n)
     - Space Complexity: O(m * n)
 
-### Hard Problems (8 problems)
+### Hard Problems (23 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -210,6 +210,81 @@ Interview-Prep-Leetcode/
    - Time Complexity: O(mn)
    - Space Complexity: O(mn)
 
+9. **Serialize and Deserialize Binary Tree** (`serializeAndDeserializeBinaryTree.py`)
+   - Tree serialization and deserialization
+   - Time Complexity: O(n)
+   - Space Complexity: O(n)
+
+10. **Binary Tree Maximum Path Sum** (`binaryTreeMaximumPathSum.py`)
+    - Find maximum path sum in binary tree
+    - Time Complexity: O(n)
+    - Space Complexity: O(h)
+
+11. **Longest Consecutive Sequence** (`longestConsecutiveSequence.py`)
+    - Find longest consecutive sequence using hash set
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+12. **Word Break** (`wordBreak.py`)
+    - Check if string can be segmented into dictionary words
+    - Time Complexity: O(n²)
+    - Space Complexity: O(n)
+
+13. **Longest Increasing Subsequence** (`longestIncreasingSubsequence.py`)
+    - Find longest increasing subsequence with binary search
+    - Time Complexity: O(n log n)
+    - Space Complexity: O(n)
+
+14. **Coin Change** (`coinChange.py`)
+    - Minimum coins to make amount (unbounded knapsack)
+    - Time Complexity: O(amount * len(coins))
+    - Space Complexity: O(amount)
+
+15. **Partition Equal Subset Sum** (`partitionEqualSubsetSum.py`)
+    - Check if array can be partitioned into equal sums
+    - Time Complexity: O(n * sum/2)
+    - Space Complexity: O(sum/2)
+
+16. **Longest Palindromic Substring** (`longestPalindromicSubstring.py`)
+    - Find longest palindromic substring
+    - Time Complexity: O(n²)
+    - Space Complexity: O(1)
+
+17. **Valid Sudoku** (`validSudoku.py`)
+    - Validate 9x9 Sudoku board
+    - Time Complexity: O(n²)
+    - Space Complexity: O(n)
+
+18. **Implement Trie** (`implementTrie.py`)
+    - Implement trie data structure
+    - Time Complexity: O(m) for insert/search
+    - Space Complexity: O(ALPHABET_SIZE * m * n)
+
+19. **Word Search** (`wordSearch.py`)
+    - Find word in 2D grid using backtracking
+    - Time Complexity: O(mn * 4^L)
+    - Space Complexity: O(L)
+
+20. **Remove Invalid Parentheses** (`removeInvalidParentheses.py`)
+    - Remove minimum parentheses to make valid
+    - Time Complexity: O(2^n)
+    - Space Complexity: O(n)
+
+21. **Merge Intervals** (`mergeIntervals.py`)
+    - Merge overlapping intervals
+    - Time Complexity: O(n log n)
+    - Space Complexity: O(n)
+
+22. **Trapping Rain Water II** (`trappingRainWaterII.py`)
+    - 2D water trapping with min-heap
+    - Time Complexity: O(mn * log(mn))
+    - Space Complexity: O(mn)
+
+23. **Edit Distance** (`editDistance.py`)
+    - Classic DP with path reconstruction
+    - Time Complexity: O(mn)
+    - Space Complexity: O(mn)
+
 ## How to Use
 
 1. **Run Individual Problems:**
@@ -233,15 +308,17 @@ Interview-Prep-Leetcode/
 
 - **Two Pointers**: Used in problems like "Container With Most Water", "3Sum"
 - **Sliding Window**: Used in "Longest Substring Without Repeating Characters"
-- **Dynamic Programming**: Used in "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance"
-- **Binary Search**: Used in "Median of Two Sorted Arrays", "Search in Rotated Sorted Array", "Kth Smallest Element in BST"
+- **Dynamic Programming**: Used in "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance", "Word Break", "Longest Increasing Subsequence", "Coin Change", "Partition Equal Subset Sum"
+- **Binary Search**: Used in "Median of Two Sorted Arrays", "Search in Rotated Sorted Array", "Kth Smallest Element in BST", "Longest Increasing Subsequence"
 - **Heap/Priority Queue**: Used in "Merge k Sorted Lists", "Top K Frequent Elements", "Trapping Rain Water II"
 - **Stack**: Used in "Valid Parentheses"
-- **Backtracking**: Used in "Subsets", "Permutations", "Combination Sum", "Letter Combinations", "N-Queens II"
-- **Graph/Tree Traversal**: Used in "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule"
-- **Hash Map**: Used in "Group Anagrams", "Two Sum"
-- **Matrix Manipulation**: Used in "Spiral Matrix", "Rotate Image"
-- **Design**: Used in "LFU Cache"
+- **Backtracking**: Used in "Subsets", "Permutations", "Combination Sum", "Letter Combinations", "N-Queens II", "Word Search", "Remove Invalid Parentheses"
+- **Graph/Tree Traversal**: Used in "Binary Tree Level Order Traversal", "Number of Islands", "Course Schedule", "Binary Tree Maximum Path Sum", "Serialize and Deserialize Binary Tree"
+- **Hash Map/Set**: Used in "Group Anagrams", "Two Sum", "Longest Consecutive Sequence", "Valid Sudoku"
+- **Matrix Manipulation**: Used in "Spiral Matrix", "Rotate Image", "Word Search"
+- **Design**: Used in "LFU Cache", "Implement Trie"
+- **String Manipulation**: Used in "Longest Palindromic Substring", "Remove Invalid Parentheses"
+- **Interval Problems**: Used in "Merge Intervals"
 
 ## Tips for Interview Preparation
 
