@@ -14,7 +14,7 @@ Interview-Prep-Leetcode/
 
 ## Problems by Difficulty
 
-### Easy Problems (14 problems)
+### Easy Problems (15 problems)
 
 1. **Two Sum** (`two-sum.py`)
    - Find two numbers in an array that add up to a target
@@ -86,7 +86,12 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(log n)
     - Space Complexity: O(1)
 
-### Medium Problems (25 problems)
+15. **Climbing Stairs** (`climbingStairs.py`)
+    - Count ways to climb stairs with 1 or 2 steps at a time
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+
+### Medium Problems (27 problems)
 
 1. **Add Two Numbers** (`addTwoNumbers.py`)
    - Add two numbers represented by linked lists
@@ -212,6 +217,16 @@ Interview-Prep-Leetcode/
     - Find longest substring without repeating characters
     - Time Complexity: O(n)
     - Space Complexity: O(min(m, n))
+
+26. **House Robber** (`houseRobber.py`)
+    - Maximum money robbed without robbing adjacent houses
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+
+27. **Longest Common Subsequence** (`longestCommonSubsequence.py`)
+    - Find length of longest common subsequence between two strings
+    - Time Complexity: O(m * n)
+    - Space Complexity: O(m * n)
 
 ### Hard Problems (32 problems)
 
@@ -380,7 +395,9 @@ Interview-Prep-Leetcode/
 1. **Run Individual Problems:**
    ```bash
    python easy/two-sum.py
+   python easy/climbingStairs.py
    python medium/addTwoNumbers.py
+   python medium/houseRobber.py
    python hard/medianOfTwoSortedArrays.py
    ```
 
@@ -398,7 +415,7 @@ Interview-Prep-Leetcode/
 
 - **Two Pointers**: Used in problems like "Container With Most Water", "3Sum"
 - **Sliding Window**: Used in "Longest Substring Without Repeating Characters", "Minimum Window Substring", "Sliding Window Maximum"
-- **Dynamic Programming**: Used in "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance", "Word Break", "Longest Increasing Subsequence", "Coin Change", "Partition Equal Subset Sum"
+- **Dynamic Programming**: Used in "Climbing Stairs", "Regular Expression Matching", "Minimum Path Sum", "Unique Paths", "Edit Distance", "Word Break", "Longest Increasing Subsequence", "Coin Change", "Partition Equal Subset Sum", "House Robber", "Longest Common Subsequence"
 - **Binary Search**: Used in "Median of Two Sorted Arrays", "Search in Rotated Sorted Array", "Kth Smallest Element in BST", "Longest Increasing Subsequence"
 - **Heap/Priority Queue**: Used in "Merge k Sorted Lists", "Top K Frequent Elements", "Trapping Rain Water II"
 - **Stack**: Used in "Valid Parentheses"
