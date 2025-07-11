@@ -14,7 +14,7 @@ Interview-Prep-Leetcode/
 
 ## Problems by Difficulty
 
-### Easy Problems (16 problems)
+### Easy Problems (18 problems)
 
 1. **Two Sum** (`two-sum.py`)
    - Find two numbers in an array that add up to a target
@@ -96,7 +96,17 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(n)
     - Space Complexity: O(1)
 
-### Medium Problems (28 problems)
+17. **Valid Anagram** (`validAnagram.py`)
+    - Check if strings are anagrams using character counting
+    - Time Complexity: O(n)
+    - Space Complexity: O(1) since alphabet size is fixed
+
+18. **Contains Duplicate** (`containsDuplicate.py`)
+    - Check for duplicates using hash set
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+### Medium Problems (30 problems)
 
 1. **Add Two Numbers** (`addTwoNumbers.py`)
    - Add two numbers represented by linked lists
@@ -238,7 +248,17 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(n)
     - Space Complexity: O(h) where h is height of tree
 
-### Hard Problems (63 problems)
+29. **Construct Binary Tree from Preorder and Inorder Traversal** (`constructBinaryTreeFromPreorderAndInorderTraversal.py`)
+    - Build binary tree from preorder and inorder traversals
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+30. **Implement Trie (Prefix Tree)** (`implementTriePrefixTree.py`)
+    - Implement trie data structure with insert, search, and startsWith
+    - Time Complexity: O(m) for insert/search/startsWith where m is word length
+    - Space Complexity: O(ALPHABET_SIZE * m * n) where m is avg word length, n is number of words
+
+### Hard Problems (65 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -509,6 +529,16 @@ Interview-Prep-Leetcode/
     - Merge k sorted linked lists using priority queue
     - Time Complexity: O(n log k)
     - Space Complexity: O(k)
+
+55. **Word Ladder** (`wordLadder.py`)
+    - Find shortest transformation sequence using BFS
+    - Time Complexity: O(n * 26 * L) where n is wordList size, L is word length
+    - Space Complexity: O(n)
+
+56. **Word Ladder II** (`wordLadderII.py`)
+    - Find all shortest transformation sequences using BFS with path tracking
+    - Time Complexity: O(n * 26^l * l) where n is wordList size, l is word length
+    - Space Complexity: O(n * l)
 
 ## How to Use
 
