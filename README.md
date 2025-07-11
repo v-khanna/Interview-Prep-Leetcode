@@ -14,7 +14,7 @@ Interview-Prep-Leetcode/
 
 ## Problems by Difficulty
 
-### Easy Problems (15 problems)
+### Easy Problems (16 problems)
 
 1. **Two Sum** (`two-sum.py`)
    - Find two numbers in an array that add up to a target
@@ -91,7 +91,12 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(n)
     - Space Complexity: O(1)
 
-### Medium Problems (27 problems)
+16. **Reverse String** (`reverseString.py`)
+    - Reverse string in-place using two pointers
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+
+### Medium Problems (28 problems)
 
 1. **Add Two Numbers** (`addTwoNumbers.py`)
    - Add two numbers represented by linked lists
@@ -228,7 +233,12 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(m * n)
     - Space Complexity: O(m * n)
 
-### Hard Problems (62 problems)
+28. **Validate Binary Search Tree** (`validateBinarySearchTree.py`)
+    - Validate if binary tree is a valid BST using inorder traversal
+    - Time Complexity: O(n)
+    - Space Complexity: O(h) where h is height of tree
+
+### Hard Problems (63 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -494,6 +504,11 @@ Interview-Prep-Leetcode/
     - Remove minimum parentheses to make valid using BFS
     - Time Complexity: O(2^n)
     - Space Complexity: O(n)
+
+54. **Merge k Sorted Lists** (`mergeKSortedLists.py`)
+    - Merge k sorted linked lists using priority queue
+    - Time Complexity: O(n log k)
+    - Space Complexity: O(k)
 
 ## How to Use
 
