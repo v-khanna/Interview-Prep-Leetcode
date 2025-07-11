@@ -228,7 +228,7 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(m * n)
     - Space Complexity: O(m * n)
 
-### Hard Problems (32 problems)
+### Hard Problems (42 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -389,6 +389,61 @@ Interview-Prep-Leetcode/
     - Minimum window containing all characters
     - Time Complexity: O(n)
     - Space Complexity: O(k)
+
+33. **Alien Dictionary** (`alienDictionary.py`)
+    - Find the order of characters in an alien language
+    - Time Complexity: O(V + E)
+    - Space Complexity: O(V + E)
+
+34. **Basic Calculator** (`basicCalculator.py`)
+    - Evaluate a basic arithmetic expression with parentheses
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+35. **Basic Calculator II** (`basicCalculatorII.py`)
+    - Evaluate a basic arithmetic expression with +, -, *, /
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+36. **Best Time to Buy and Sell Stock III** (`bestTimeToBuyAndSellStockIII.py`)
+    - Max profit with at most two transactions
+    - Time Complexity: O(n)
+    - Space Complexity: O(1)
+
+37. **Best Time to Buy and Sell Stock IV** (`bestTimeToBuyAndSellStockIV.py`)
+    - Max profit with at most k transactions
+    - Time Complexity: O(n * k)
+    - Space Complexity: O(k)
+
+38. **Burst Balloons** (`burstBalloons.py`)
+    - Max coins from bursting balloons
+    - Time Complexity: O(n³)
+    - Space Complexity: O(n²)
+
+39. **Candy** (`candy.py`)
+    - Distribute candies to children with ratings
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+40. **Clone Graph** (`cloneGraph.py`)
+    - Deep copy of a connected undirected graph
+    - Time Complexity: O(V + E)
+    - Space Complexity: O(V)
+
+41. **Concatenated Words** (`concatenatedWords.py`)
+    - Find all concatenated words in a dictionary
+    - Time Complexity: O(n * L²)
+    - Space Complexity: O(n * L)
+
+42. **Count of Smaller Numbers After Self** (`countOfSmallerNumbersAfterSelf.py`)
+    - Count smaller numbers after each element
+    - Time Complexity: O(n log n)
+    - Space Complexity: O(n)
+
+43. **Data Stream as Disjoint Intervals** (`dataStreamAsDisjointIntervals.py`)
+    - Summarize a data stream as disjoint intervals
+    - Time Complexity: O(log n) for addNum, O(n) for getIntervals
+    - Space Complexity: O(n)
 
 ## How to Use
 
