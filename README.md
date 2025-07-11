@@ -228,7 +228,7 @@ Interview-Prep-Leetcode/
     - Time Complexity: O(m * n)
     - Space Complexity: O(m * n)
 
-### Hard Problems (42 problems)
+### Hard Problems (62 problems)
 
 1. **Median of Two Sorted Arrays** (`medianOfTwoSortedArrays.py`)
    - Find median of two sorted arrays
@@ -443,6 +443,56 @@ Interview-Prep-Leetcode/
 43. **Data Stream as Disjoint Intervals** (`dataStreamAsDisjointIntervals.py`)
     - Summarize a data stream as disjoint intervals
     - Time Complexity: O(log n) for addNum, O(n) for getIntervals
+    - Space Complexity: O(n)
+
+44. **Largest Rectangle in Histogram** (`largestRectangleInHistogram.py`)
+    - Find largest rectangle area in histogram using monotonic stack
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+45. **Longest Valid Parentheses** (`longestValidParentheses.py`)
+    - Find longest valid parentheses substring
+    - Time Complexity: O(n)
+    - Space Complexity: O(n)
+
+46. **Maximal Rectangle** (`maximalRectangle.py`)
+    - Find largest rectangle containing only 1's in binary matrix
+    - Time Complexity: O(mn)
+    - Space Complexity: O(n)
+
+47. **Word Break II** (`wordBreakII.py`)
+    - Find all possible word break combinations
+    - Time Complexity: O(n³ + 2^n)
+    - Space Complexity: O(2^n)
+
+48. **Sudoku Solver** (`sudokuSolver.py`)
+    - Solve Sudoku puzzle using backtracking
+    - Time Complexity: O(9^(n²))
+    - Space Complexity: O(n²)
+
+49. **Alien Dictionary** (`alienDictionary.py`)
+    - Find the order of characters in an alien language
+    - Time Complexity: O(C) where C is total number of characters
+    - Space Complexity: O(1) since alphabet size is fixed
+
+50. **Concatenated Words** (`concatenatedWords.py`)
+    - Find all concatenated words in a dictionary
+    - Time Complexity: O(n * L²)
+    - Space Complexity: O(n * L)
+
+51. **Expression Add Operators** (`expressionAddOperators.py`)
+    - Add operators to create expressions that evaluate to target
+    - Time Complexity: O(4^n)
+    - Space Complexity: O(n)
+
+52. **Word Search II** (`wordSearchII.py`)
+    - Multiple word search using Trie and DFS
+    - Time Complexity: O(m * n * 4^L) where L is max word length
+    - Space Complexity: O(k * L) where k is number of words
+
+53. **Remove Invalid Parentheses** (`removeInvalidParentheses.py`)
+    - Remove minimum parentheses to make valid using BFS
+    - Time Complexity: O(2^n)
     - Space Complexity: O(n)
 
 ## How to Use

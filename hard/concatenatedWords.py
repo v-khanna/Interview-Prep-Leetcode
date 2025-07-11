@@ -2,118 +2,34 @@
 Concatenated Words (Hard)
 https://leetcode.com/problems/concatenated-words/
 
-Problem: Given an array of strings words, return all the concatenated words in the given list of words.
-A concatenated word is defined as a string that is completely composed by at least two shorter words in the given array.
+Problem: Given an array of strings words (without duplicates), return all the concatenated words in the given list of words. A concatenated word is defined as a string that is completely composed by at least two shorter words in the given array.
 
 Example:
-Input: ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
+Input: words = ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
 Output: ["catsdogcats","dogcatsdog","ratcatdogcat"]
 
-Approach: Trie + DFS with memoization
-Time Complexity: O(n * L²) where n is number of words, L is max word length
+Approach: Dynamic Programming with Trie
+Time Complexity: O(n * L^2) where n is number of words, L is max word length
 Space Complexity: O(n * L)
 """
-
-
-class TrieNode:
-    def __init__(self):
-        self.children = {}
-        self.is_end = False
 
 
 class Solution:
     def findAllConcatenatedWordsInADict(self, words):
         """
-        Find all concatenated words using Trie and DFS
+        Find all concatenated words using dynamic programming
         """
-        # Build trie
-        trie = TrieNode()
-        for word in words:
-            if word:  # Skip empty strings
-                self._insert(trie, word)
+        if not words:
+            return []
 
-        result = []
-        for word in words:
-            if word and self._can_form(word, trie, 0, 0):
-                result.append(word)
-
-        return result
-
-    def _insert(self, root, word):
-        """Insert word into trie"""
-        node = root
-        for char in word:
-            if char not in node.children:
-                node.children[char] = TrieNode()
-            node = node.children[char]
-        node.is_end = True
-
-    def _can_form(self, word, trie, start, count):
-        """
-        Check if word can be formed by concatenating other words
-        count: number of words used so far
-        """
-        if start == len(word):
-            return count >= 2
-
-        node = trie
-        for i in range(start, len(word)):
-            char = word[i]
-            if char not in node.children:
-                return False
-
-            node = node.children[char]
-            if node.is_end:
-                # Try to form the rest of the word
-                if self._can_form(word, trie, i + 1, count + 1):
-                    return True
-
-        return False
-
-    def findAllConcatenatedWordsInADictOptimized(self, words):
-        """
-        Optimized approach using set and DFS with memoization
-        """
         # Convert to set for O(1) lookup
-        word_set = set(words)
-        memo = {}
-
-        def can_form(word, count=0):
-            if word in memo:
-                return memo[word]
-
-            if count > 0 and word in word_set:
-                memo[word] = True
-                return True
-
-            for i in range(1, len(word)):
-                prefix = word[:i]
-                suffix = word[i:]
-
-                if prefix in word_set and can_form(suffix, count + 1):
-                    memo[word] = True
-                    return True
-
-            memo[word] = False
-            return False
-
-        result = []
-        for word in words:
-            if word and can_form(word):
-                result.append(word)
-
-        return result
-
-    def findAllConcatenatedWordsInADictDP(self, words):
-        """
-        Dynamic programming approach
-        """
-        word_set = set(words)
+        wordSet = set(words)
         result = []
 
-        for word in words:
+        def canForm(word):
+            """Check if word can be formed by concatenating other words"""
             if not word:
-                continue
+                return False
 
             n = len(word)
             dp = [False] * (n + 1)
@@ -121,62 +37,202 @@ class Solution:
 
             for i in range(1, n + 1):
                 for j in range(i):
-                    if dp[j] and word[j:i] in word_set:
+                    if dp[j] and word[j:i] in wordSet:
                         dp[i] = True
                         break
 
-            # Check if word can be formed by at least 2 other words
-            if dp[n]:
-                # Verify it's not just a single word
-                for i in range(1, n):
-                    if dp[i] and word[i:] in word_set:
-                        result.append(word)
-                        break
+            return dp[n]
+
+        # Check each word
+        for word in words:
+            if len(word) == 0:
+                continue
+
+            # Temporarily remove current word from set
+            wordSet.remove(word)
+
+            if canForm(word):
+                result.append(word)
+
+            # Add word back to set
+            wordSet.add(word)
 
         return result
 
-    def findAllConcatenatedWordsInADictTrieOptimized(self, words):
+    def findAllConcatenatedWordsInADictOptimized(self, words):
         """
-        Optimized Trie approach with early termination
+        Optimized version with early termination
         """
-        # Sort words by length to process shorter words first
-        words.sort(key=len)
+        if not words:
+            return []
 
-        trie = TrieNode()
+        # Sort by length to process shorter words first
+        words.sort(key=len)
+        wordSet = set()
         result = []
 
-        for word in words:
+        def canForm(word):
+            """Check if word can be formed by concatenating other words"""
             if not word:
+                return False
+
+            n = len(word)
+            dp = [False] * (n + 1)
+            dp[0] = True
+
+            for i in range(1, n + 1):
+                for j in range(i):
+                    if dp[j] and word[j:i] in wordSet:
+                        dp[i] = True
+                        break
+
+            return dp[n]
+
+        # Process words in order of increasing length
+        for word in words:
+            if len(word) == 0:
                 continue
 
-            if self._can_form_optimized(word, trie):
+            if canForm(word):
                 result.append(word)
-            else:
-                self._insert(trie, word)
+
+            wordSet.add(word)
 
         return result
 
-    def _can_form_optimized(self, word, trie):
-        """Optimized version that stops early"""
-        n = len(word)
-        dp = [False] * (n + 1)
-        dp[0] = True
+    def findAllConcatenatedWordsInADictTrie(self, words):
+        """
+        Trie-based approach
+        """
+        if not words:
+            return []
 
-        for i in range(n):
-            if not dp[i]:
+        # Build trie
+        trie = {}
+        for word in words:
+            if len(word) == 0:
+                continue
+            node = trie
+            for char in word:
+                if char not in node:
+                    node[char] = {}
+                node = node[char]
+            node["#"] = True  # End marker
+
+        result = []
+
+        def canForm(word):
+            """Check if word can be formed using trie"""
+            if not word:
+                return False
+
+            n = len(word)
+            dp = [False] * (n + 1)
+            dp[0] = True
+
+            for i in range(1, n + 1):
+                for j in range(i):
+                    if dp[j] and isWord(word[j:i]):
+                        dp[i] = True
+                        break
+
+            return dp[n]
+
+        def isWord(word):
+            """Check if word exists in trie"""
+            node = trie
+            for char in word:
+                if char not in node:
+                    return False
+                node = node[char]
+            return "#" in node
+
+        def addToTrie(word):
+            """Add word to trie"""
+            node = trie
+            for char in word:
+                if char not in node:
+                    node[char] = {}
+                node = node[char]
+            node["#"] = True
+
+        def removeFromTrie(word):
+            """Remove word from trie"""
+            node = trie
+            path = [node]
+            for char in word:
+                if char not in node:
+                    return
+                node = node[char]
+                path.append(node)
+
+            if "#" in node:
+                del node["#"]
+
+                # Clean up empty nodes
+                for i in range(len(path) - 2, -1, -1):
+                    if not path[i + 1]:
+                        del path[i][word[i]]
+                    else:
+                        break
+
+        # Check each word
+        for word in words:
+            if len(word) == 0:
                 continue
 
-            node = trie
-            for j in range(i, n):
-                char = word[j]
-                if char not in node.children:
-                    break
+            # Temporarily remove from trie
+            removeFromTrie(word)
 
-                node = node.children[char]
-                if node.is_end:
-                    dp[j + 1] = True
+            if canForm(word):
+                result.append(word)
 
-        return dp[n]
+            # Add back to trie
+            addToTrie(word)
+
+        return result
+
+    def findAllConcatenatedWordsInADictDFS(self, words):
+        """
+        DFS approach with memoization
+        """
+        if not words:
+            return []
+
+        wordSet = set(words)
+        memo = {}
+
+        def canForm(word, count=0):
+            """Check if word can be formed with at least 2 words"""
+            if word in memo:
+                return memo[word]
+
+            if not word:
+                return count >= 2
+
+            result = False
+            for i in range(1, len(word) + 1):
+                prefix = word[:i]
+                if prefix in wordSet:
+                    if canForm(word[i:], count + 1):
+                        result = True
+                        break
+
+            memo[word] = result
+            return result
+
+        result = []
+        for word in words:
+            if len(word) == 0:
+                continue
+
+            wordSet.remove(word)
+            if canForm(word):
+                result.append(word)
+            wordSet.add(word)
+            memo.clear()  # Clear memo for next word
+
+        return result
 
 
 def test_concatenated_words():
@@ -201,41 +257,34 @@ def test_concatenated_words():
     result1_opt = solution.findAllConcatenatedWordsInADictOptimized(words1)
     assert sorted(result1_opt) == sorted(expected1)
 
-    result1_dp = solution.findAllConcatenatedWordsInADictDP(words1)
-    assert sorted(result1_dp) == sorted(expected1)
+    result1_dfs = solution.findAllConcatenatedWordsInADictDFS(words1)
+    assert sorted(result1_dfs) == sorted(expected1)
 
-    result1_trie = solution.findAllConcatenatedWordsInADictTrieOptimized(words1)
-    assert sorted(result1_trie) == sorted(expected1)
-
-    # Test case 2: Simple concatenation
-    words2 = ["cat", "dog", "catdog"]
+    # Test case 2: No concatenated words
+    words2 = ["cat", "dog", "bird"]
     result2 = solution.findAllConcatenatedWordsInADict(words2)
-    expected2 = ["catdog"]
-    assert result2 == expected2
+    assert result2 == []
 
-    # Test case 3: No concatenated words
-    words3 = ["cat", "dog", "bird"]
+    # Test case 3: Empty list
+    words3 = []
     result3 = solution.findAllConcatenatedWordsInADict(words3)
-    expected3 = []
-    assert result3 == expected3
+    assert result3 == []
 
-    # Test case 4: Empty words
-    words4 = ["", "cat", "dog", "catdog"]
+    # Test case 4: Single word
+    words4 = ["cat"]
     result4 = solution.findAllConcatenatedWordsInADict(words4)
-    expected4 = ["catdog"]
-    assert result4 == expected4
+    assert result4 == []
 
-    # Test case 5: Single word
-    words5 = ["cat"]
+    # Test case 5: Simple concatenation
+    words5 = ["a", "b", "ab"]
     result5 = solution.findAllConcatenatedWordsInADict(words5)
-    expected5 = []
-    assert result5 == expected5
+    assert result5 == ["ab"]
 
-    # Test case 6: Empty input
-    words6 = []
+    # Test case 6: Multiple concatenations
+    words6 = ["a", "b", "c", "abc", "abcd"]
     result6 = solution.findAllConcatenatedWordsInADict(words6)
-    expected6 = []
-    assert result6 == expected6
+    expected6 = ["abc", "abcd"]
+    assert sorted(result6) == sorted(expected6)
 
     print("All test cases passed!")
 
